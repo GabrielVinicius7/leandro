@@ -1,0 +1,27 @@
+{% extends 'usuarios/base.html' %}
+
+{% block conteudo %}
+
+{% load static %}
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand"  href=" {% url 'listagem_usuarios' %}" >
+        <img src="{% static 'images/cadastro.png' %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        Cadastrados
+      </a>
+    </div>
+  </nav>
+
+</nav>
+<form action=" {% url 'listagem_usuarios' %}" method="post">
+  {% csrf_token %}
+  <div style= "text-align: center;"  class="container">
+    <br>
+    <br>
+    <h1>Cadastre-se<h1>
+      <br>
+    nome <input name="nome" class= "form-control-sm btn btn-lighty btn-sm" type="text">
+    idade <input name="idade" class= "form-control-sm btn btn-light btn-sm" type="text">
+    <button class= "form-control-sm">Enviar</button>
+   
+  {% endblock %}
